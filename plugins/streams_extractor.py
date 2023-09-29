@@ -43,7 +43,6 @@ async def streamsExtractor(c: Client, cb:CallbackQuery ,media_mid, exAudios=Fals
         await asyncio.sleep(5)
     except UnknownError as e:
         LOGGER.info(e)
-        pass
     except Exception as downloadErr:
         LOGGER.info(f"Failed to download Error: {downloadErr}")
         await cb.message.edit("Download Error")
@@ -81,5 +80,5 @@ async def streamsExtractor(c: Client, cb:CallbackQuery ,media_mid, exAudios=Fals
     await cb.message.delete()
     await delete_all(root=f"downloads/{str(cb.from_user.id)}")
     queueDB.update({cb.from_user.id: {"videos": [], "subtitles": [], "audios": []}})
-    
+
     return
