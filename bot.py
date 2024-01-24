@@ -99,7 +99,7 @@ async def loginHandler(c: Client, m: Message):
         try:
             passwd = m.text.split(" ", 1)[1]
         except:
-            await m.reply_text("**Command:**\n  `/login <password>`\n\n**Usage:**\n  `password`: Get the password from owner",quote=True,parse_mode=enums.parse_mode.ParseMode.MARKDOWN)
+            await m.reply_text("**Command:**\n  `/login <password>`\n\n**Usage:**\n  `password`: Get the password from here https://t.me/SourcePleaseOfficial/19",quote=True,disable_web_page_preview=True,parse_mode=enums.parse_mode.ParseMode.MARKDOWN)
         passwd = passwd.strip()
         if passwd == Config.PASSWORD:
             user.allowed = True
@@ -196,8 +196,9 @@ async def start_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n** `/login <password>`\n\n**Usage:**\n  `password`: Get the password from here https://t.me/SourcePleaseOfficial/19 ** ",
                 quote=True,
+		disable_web_page_preview=True,
             )
             return
     else:
