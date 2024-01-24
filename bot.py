@@ -196,7 +196,7 @@ async def start_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi**{m.from_user.first_name}**\n\n**Unfortunately You Can't Use Me\n\n`/login <password>`\n\nGet The Password From Here https://t.me/SourcePleaseOfficial/19**",
+                text=f"Hi **{m.from_user.first_name}**\n\n**Unfortunately You Can't Use Me\n\n`/login <password>`\n\nGet The Password From Here https://t.me/SourcePleaseOfficial/19**",
                 quote=True,
 		disable_web_page_preview=True,
             )
@@ -205,7 +205,7 @@ async def start_handler(c: Client, m: Message):
         user.allowed = True
         user.set()
     res = await m.reply_text(
-        text=f"Hi **{m.from_user.first_name}**\n\n**I Am A File/Video Merger Bot\n\nI Can Merge Telegram Files!, Also Subtitles/Audio Extract From Video File And Upload It To Telegram\n\n**Owner: @{Config.OWNER_USERNAME}**",
+        text=f"Hi **{m.from_user.first_name}**\n\n**I Am A File/Video Merger Bot\n\nI Can Merge Telegram Files!, Also Subtitles/Audio Extract From Video File And Upload It To Telegram\n\nOwner: @{Config.OWNER_USERNAME}**",
         quote=True,
     )
     del user
